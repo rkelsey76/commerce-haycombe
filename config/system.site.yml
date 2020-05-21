@@ -1,0 +1,14 @@
+uuid: ef866a5f-03f1-4678-abb7-2d3da1de4806
+name: commerce-haycombe
+mail: bathcitysec@bcyfc.co.uk
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
