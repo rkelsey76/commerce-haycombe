@@ -23,6 +23,7 @@
         "drupal/console": "^1",
         "drupal/core-composer-scaffold": "^8.8.1",
         "drupal/core-recommended": "^8.8",
+        "drupal/fontawesome": "^2.16",
         "drupalcommerce/commerce_base": "dev-8.x-1.x",
         "drush-ops/behat-drush-endpoint": "^9.3",
         "drush/drush": "~8.3",
