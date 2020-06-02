@@ -24,6 +24,7 @@
         "drupal/console": "^1",
         "drupal/core-composer-scaffold": "^8.8.1",
         "drupal/core-recommended": "^8.8",
+        "drupal/facets": "^1.4",
         "drupal/fontawesome": "^2.16",
         "drupal/search_api": "^1.16",
         "drupalcommerce/commerce_base": "dev-8.x-1.x",
