@@ -1,38 +1,57 @@
 {% extends 'page.html.twig' %}
 
-<div class="container-fluid">
-  <div class="container">
-    <div class="featured-products">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 class="h1 line">{{ 'Featured products'|t }}</h2>
+{# Main #}
+{% block main %}
+  <div role="main" class="main-container js-quickedit-main-content">
+      {# Off canvas side navigation #}
+      {% if page.navigation %}
+        <div id="off-canvas" class="side-flyout collapse left">
+          {{ page.navigation }}
         </div>
-      </div>
-      <div class="row">
-        {% for featured_product in featured_products %}
-          <div class="featured-seller col-md-4">
-            {{ render_var(featured_product) }}
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</div>
-<div class="testimonial container-fluid well well-lg well-primary">
-  <div class="container">
-    <div class="text-align-center row">
-      <div class="col-xs-10 col-xs-push-1">
-        <p class="testimonial__text h2">{{ 'Slow-carb paleo bicycle rights bushwick. Tote bag mustache man bun swag, tbh chartreuse synth stumptown portland cray.'|t }}</p>
-        <div class="testimonial__rating">
-          <i class="glyphicon glyphicon-star"></i>
-          <i class="glyphicon glyphicon-star"></i>
-          <i class="glyphicon glyphicon-star"></i>
-          <i class="glyphicon glyphicon-star"></i>
-          <i class="glyphicon glyphicon-star-empty"></i>
-        </div>
-        <p>{{ 'Nikola White, customer'|t }}</p>
-      </div>
-    </div>
-  </div>
-</div>
+      {% endif %}
 
+      {# Header #}
+      {% if page.header %}
+        {% block header %}
+            {{ page.header }}
+        {% endblock %}
+      {% endif %}
+
+
+      {# Highlighted #}
+      {% if page.highlighted %}
+        {% block highlighted %}
+          <div class="container">
+            <div class="highlighted">{{ page.highlighted }}</div>
+          </div>
+          {% endblock %}
+      {% endif %}
+
+      <div class="row">
+        {# Content #}
+        <section{{ content_attributes }}>
+
+          {# Action Links #}
+          {% if action_links %}
+            {% block action_links %}
+              <ul class="action-links">{{ action_links }}</ul>
+            {% endblock %}
+          {% endif %}
+
+          {# Help #}
+          {% if page.help %}
+            {% block help %}
+              {{ page.help }}
+            {% endblock %}
+          {% endif %}
+
+          {# Content #}
+          {% block content %}
+            <a id="main-content"></a>
+            {{ page.content|without('belgrade_page_title') }}
+          {% endblock %}
+        </section>
+      </div>
+    </div>
+  </div>
+{% endblock %}
